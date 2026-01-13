@@ -1,4 +1,4 @@
-import { RiCalendarCheckLine, RiArrowRightUpLine } from "react-icons/ri";
+ 
 import { Link } from "react-router-dom";
 
 const BookConsultation = () => {

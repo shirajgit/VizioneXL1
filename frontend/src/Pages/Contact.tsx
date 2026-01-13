@@ -8,7 +8,7 @@ const ContactUs = () => {
     message: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -16,11 +16,11 @@ const ContactUs = () => {
   };
 
   
-const handleSubmit = async (e) => {
+const handleSubmit = async (e : React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
   try {
-    const res = await fetch("http://localhost:5000/contact", {
+    const res = await fetch("https://job-backend-5frz.onrender.com/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -74,9 +74,12 @@ const handleSubmit = async (e) => {
 
       {/* Contact Form */}
       <form
-  onSubmit={handleSubmit}
-  className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-3xl space-y-6"
->
+        encType="multipart/form-data"
+        onSubmit={handleSubmit}
+        action="https://your-backend.onrender.com/apply-job"
+         className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-3xl space-y-6"
+         method="POST"
+         >
   <div className="grid md:grid-cols-2 gap-6">
     <div>
       <label className="block text-gray-700 font-medium mb-2">

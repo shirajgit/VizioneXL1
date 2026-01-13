@@ -7,19 +7,19 @@ const Career = () => {
     email: "",
     phone: "",
     experience: "",
-    resume: null,
+    resume: null as File | null,
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleFileChange = (e) => {
-    setFormData({ ...formData, resume: e.target.files[0] });
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, resume: e.target.files?.[0] || null });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
   if (!formData.resume) {
@@ -36,7 +36,7 @@ const Career = () => {
   data.append("resume", formData.resume); // ✅ ADD THIS LINE
 
   try {
-    const res = await fetch("http://localhost:5000/apply-job", {
+    const res = await fetch("https://job-backend-5frz.onrender.com/apply-job", {
       method: "POST",
       body: data,
     });
