@@ -5,7 +5,7 @@ const WhatWeDo = () => {
     <section className="bg-white text-white ">
      
         
- <section className="py-24 h-90 bg-cover bg-center opacity-90 bg-no-repeat"
+      <section className="py-24 h-90 bg-cover bg-center opacity-90 bg-no-repeat"
   style={{
     backgroundImage:
       "url('https://vizionexltechnologies.in/images/wwd.png')",
@@ -21,7 +21,7 @@ const WhatWeDo = () => {
             Building next-gen digital experiences for businesses worldwide.
           </p>
         </div>
-      </section>
+       </section>
 
       <div className='lg:px-35 md:px-10 mb-15 sm:px-20 px-2'>
         <h1 className='text-4xl font-bold text-black text-center mt-10 mb-15'>Our Areas of Expertise</h1>

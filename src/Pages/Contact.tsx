@@ -1,0 +1,125 @@
+import { useState } from "react";
+
+const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+    alert("Thank you! We will get back to you soon.");
+    setFormData({ name: "", email: "", phone: "", message: "" });
+  };
+
+  return (<> 
+  <section className="py-24 h-90 bg-cover bg-center opacity-90 bg-no-repeat"
+  style={{
+    backgroundImage:
+      "url('https://vizionexltechnologies.in/images/wwd.png')",
+  }}> 
+  
+ 
+
+        <div className="mx-auto max-w-7xl px-6 text-white">
+          <h1 className="text-5xl md:text-6xl font-extrabold">
+            Contact <span className="text-yellow-300">Us</span>
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg text-white/90">
+            We'd love to hear from you! Whether you have questions, feedback, or
+            just want to say hello, our team is here to assist you. Reach out to
+            us through the form below or visit us at our office location.
+          </p>
+        </div>
+       </section>
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center py-16 px-6">
+
+      
+
+
+      <h1 className="text-4xl font-bold mb-8 text-gray-800">Contact Us</h1>
+
+      {/* Contact Info */}
+      <div className="bg-white shadow-md rounded-lg p-6 mb-10 w-full max-w-3xl">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-700">Visit Us At</h2>
+        <p className="text-gray-600 mb-2">Opp Hanamashetty Tyres Shop,</p>
+        <p className="text-gray-600 mb-2">Gurukul Road, Vijayapura – 586101</p>
+      </div>
+
+      {/* Contact Form */}
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white shadow-md rounded-lg p-8 w-full max-w-3xl space-y-6"
+      >
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <label className="block text-gray-700 font-medium mb-2">Name</label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              required
+            />
+          </div>
+
+          <div>
+            <label className="block text-gray-700 font-medium mb-2">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              required
+            />
+          </div>
+        </div>
+
+        <div>
+          <label className="block text-gray-700 font-medium mb-2">Phone</label>
+          <input
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+        </div>
+
+        <div>
+          <label className="block text-gray-700 font-medium mb-2">Message</label>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            rows={5}
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            required
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          className="w-full bg-indigo-600 text-white font-semibold py-3 rounded-lg hover:bg-indigo-700 transition"
+        >
+          Send Message
+        </button>
+      </form>
+    </div> 
+    </>
+  );
+};
+
+export default ContactUs;
