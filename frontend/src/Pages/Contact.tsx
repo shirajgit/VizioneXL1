@@ -73,66 +73,79 @@ const handleSubmit = async (e) => {
       </div>
 
       {/* Contact Form */}
-      <form action='mailto:Shirajmujawar03@gmail.com' method='POST' encType='text/plain'
-        onSubmit={handleSubmit}
-        className="bg-white shadow-md rounded-lg p-8 w-full max-w-3xl space-y-6"
-      >
-        <div className="grid md:grid-cols-2 gap-6">
-          <div>
-            <label className="block text-gray-700 font-medium mb-2">Name</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              required
-            />
-          </div>
+      <form
+  onSubmit={handleSubmit}
+  className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-3xl space-y-6"
+>
+  <div className="grid md:grid-cols-2 gap-6">
+    <div>
+      <label className="block text-gray-700 font-medium mb-2">
+        Name
+      </label>
+      <input
+        type="text"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+        placeholder="Your Name"
+        className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-500 outline-none"
+        required
+      />
+    </div>
 
-          <div>
-            <label className="block text-gray-700 font-medium mb-2">Email</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              required
-            />
-          </div>
-        </div>
+    <div>
+      <label className="block text-gray-700 font-medium mb-2">
+        Email
+      </label>
+      <input
+        type="email"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+        placeholder="you@example.com"
+        className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-500 outline-none"
+        required
+      />
+    </div>
+  </div>
 
-        <div>
-          <label className="block text-gray-700 font-medium mb-2">Phone</label>
-          <input
-            type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          />
-        </div>
+  <div>
+    <label className="block text-gray-700 font-medium mb-2">
+      Phone
+    </label>
+    <input
+      type="tel"
+      name="phone"
+      value={formData.phone}
+      onChange={handleChange}
+      placeholder="+91 XXXXX XXXXX"
+      className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-500 outline-none"
+    />
+  </div>
 
-        <div>
-          <label className="block text-gray-700 font-medium mb-2">Message</label>
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            rows={5}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            required
-          ></textarea>
-        </div>
+  <div>
+    <label className="block text-gray-700 font-medium mb-2">
+      Message
+    </label>
+    <textarea
+      name="message"
+      value={formData.message}
+      onChange={handleChange}
+      rows={5}
+      placeholder="Write your message..."
+      className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-500 outline-none"
+      required
+    />
+  </div>
 
-        <button
-          type="submit"
-          className="w-full bg-indigo-600 text-white font-semibold py-3 rounded-lg hover:bg-indigo-700 transition"
-        >
-          Send Message
-        </button>
-      </form>
+  <button
+    type="submit"
+    className="w-full rounded-lg bg-indigo-600 py-3 font-semibold text-white hover:bg-indigo-700 transition"
+  >
+    Send Message
+  </button>
+</form>
+
     </div> 
     </>
   );
