@@ -4,14 +4,17 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-md bg-blue-300 border-b border-gray-200">
+    <nav className="sticky top-0 z-50 backdrop-blur-md bg-blue-300  ">
       <div className="mx-auto max-w-7xl px-8">
         <div className="flex h-20 items-center justify-between">
- 
-          <div className="leading-tight p-2">
+          
+          <a href="/">
+            <div className="leading-tight p-2">
              <img src="/logo-vizion.png" alt="Logo" className="w-50 m-2" />
           
           </div>
+          </a>
+          
  
           <div className="hidden md:flex items-center space-x-6 text-gray-700 font-medium">
             {[
@@ -23,7 +26,7 @@ const Navbar = () => {
             ].map((item) => (
               <a
                 key={item}
-                href={item === "Contact Us" ? "#contact" : "#"}
+                href={item === "Contact Us" ? "/contact" : item === "Who Are We" ? "/whoarewe" : item === "What We Do" ? "/whatwedo" : item === "Our Creations" ? "/ourcreations" : "/career"}
                 className="relative group transition"
               >
                 <span className="group-hover:text-indigo-600">

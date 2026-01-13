@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link, Links } from "react-router-dom";
 
 const slides = [
   {
@@ -66,14 +67,26 @@ const Slider = () => {
               <p className="mt-4 max-w-xl text-lg text-gray-300">
                 {slide.description}
               </p>
-
+ 
               <div className="mt-8 flex gap-4">
-                <button className="rounded-xl bg-indigo-600 px-6 py-3 font-semibold hover:scale-105 transition">
-                  Explore
-                </button>
-                <button className="rounded-xl border border-white/30 px-6 py-3 hover:bg-white/10 transition">
-                  Contact Us
-                </button>
+                {slide.title === "Our " ? (
+                  <Link to="/ourcreations">
+                    <button className="rounded-xl bg-indigo-600 px-6 py-3 font-semibold hover:scale-105 transition">
+                      Explore
+                    </button>
+                  </Link>
+                ) : (
+                  <Link to="/whatwedo">
+                    <button className="rounded-xl bg-indigo-600 px-6 py-3 font-semibold hover:scale-105 transition">
+                      Explore
+                    </button>
+                  </Link>
+                )}
+                <Link to="/contact">
+                  <button className="rounded-xl border border-white/30 px-6 py-3 hover:bg-white/10 transition">
+                    Contact Us
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

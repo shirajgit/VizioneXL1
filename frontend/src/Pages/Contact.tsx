@@ -15,12 +15,28 @@ const ContactUs = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-    alert("Thank you! We will get back to you soon.");
+  
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch("http://localhost:5000/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+    alert(data.message);
+
     setFormData({ name: "", email: "", phone: "", message: "" });
-  };
+  } catch (error) {
+    alert("Failed to send message");
+  }
+};
+
 
   return (<> 
   <section className="py-24 h-90 bg-cover bg-center opacity-90 bg-no-repeat"
@@ -57,7 +73,7 @@ const ContactUs = () => {
       </div>
 
       {/* Contact Form */}
-      <form
+      <form action='mailto:Shirajmujawar03@gmail.com' method='POST' encType='text/plain'
         onSubmit={handleSubmit}
         className="bg-white shadow-md rounded-lg p-8 w-full max-w-3xl space-y-6"
       >

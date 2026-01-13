@@ -1,4 +1,5 @@
 import { RiCalendarCheckLine, RiArrowRightUpLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const BookConsultation = () => {
   return (
@@ -28,10 +29,11 @@ const BookConsultation = () => {
 
         {/* CTA Button */}
         <div className="mt-10 flex justify-center">
-          <button className="group flex items-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-indigo-700 shadow-lg hover:scale-105 transition-transform">
+          <Link to="/contact"><button className="group flex items-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-indigo-700 shadow-lg hover:scale-105 transition-transform">
             Book Now
             <i className="ri-arrow-right-up-line text-xl transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
-          </button>
+          </button></Link>
+          
         </div>
 
       </div>
