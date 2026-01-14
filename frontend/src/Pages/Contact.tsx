@@ -20,7 +20,7 @@ const handleSubmit = async (e : React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
   try {
-    const res = await fetch("https://job-backend-5frz.onrender.com/contact", {
+    const res = await fetch("https://job-backend-1-l1hq.onrender.com/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -30,6 +30,8 @@ const handleSubmit = async (e : React.FormEvent<HTMLFormElement>) => {
 
     const data = await res.json();
     alert(data.message);
+    console.log(data);
+    
 
     setFormData({ name: "", email: "", phone: "", message: "" });
   } catch (error) {

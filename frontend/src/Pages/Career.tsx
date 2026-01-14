@@ -36,7 +36,7 @@ const Career = () => {
   data.append("resume", formData.resume); // ✅ ADD THIS LINE
 
   try {
-    const res = await fetch("https://job-backend-5frz.onrender.com/apply-job", {
+    const res = await fetch("https://job-backend-1-l1hq.onrender.com/apply-job", {
       method: "POST",
       body: data,
     });
@@ -57,6 +57,7 @@ const Career = () => {
     alert("Failed to submit application");
   }
 };
+
 
 
   return (
