@@ -23,7 +23,7 @@ Frontend: React.js / Vite / Tailwind CSS
 
 Backend: Node.js, Express.js
 
-Email Service: Nodemailer
+Email Service: Resend
 
 File Uploads: Multer
 
